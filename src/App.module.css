@@ -4,3 +4,23 @@ html {
 *, *::before, *::after {
     box-sizing: inherit;
 }
+
+.App .borderGrid {
+    z-index: 2;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 2861px;
+    border: 1px solid white;
+    opacity: 0.1;
+}
+
+.App .centerGrid {
+    z-index: 2;
+    position: absolute;
+    left: 10%;
+    right: 50%;
+    height: 2861px;
+    border: 1px solid white;
+    opacity: 0.1;
+}

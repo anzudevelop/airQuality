@@ -6,6 +6,8 @@ import Content from "./components/Content/Content";
 function App() {
     return (
         <div className={s.App}>
+           {/* <div className={s.borderGrid} />
+            <div className={s.centerGrid} />*/}
             <Header/>
             <Content/>
         </div>

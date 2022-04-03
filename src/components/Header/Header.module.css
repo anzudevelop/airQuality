@@ -4,20 +4,20 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
-    background: #131313;
+    height: 150px;
+    background: rgb(19,19,19);
+    background: linear-gradient(180deg, rgba(19,19,19,1) 0%, rgba(19,19,19,0.9023984593837535) 86%, rgba(19,19,19,0.7539390756302521) 100%);
 
     display: flex;
     align-items: center;    /*Выравнивание по высоте*/
     margin: 0 auto;         /*Выравнивание по ширине*/
 }
 
+
 .menu {
     position: absolute;
-    width: auto;
-    height: auto;
-    min-width: 5%;
-    min-height: 30px;
+    width: 38px;
+    height: 38px;
     left: 10%;
 }
 
@@ -42,16 +42,16 @@
     margin-right: auto;
     font-family: 'Misto';
     font-style: normal;
-    font-size: 40px;
+    font-size: 80px;
 }
 
 .header .time {
     position: absolute;
     right: 10%;
-    font-family: 'Montserrat';
+    font-family: 'Mont';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 38px;
     color: white;
 }
 
@@ -61,7 +61,8 @@
         height: 70px;
     }
     .menu {
-        min-height: 20px;
+        width: 25px;
+        height: 25px;
     }
     .header p {
         font-size: 30px;
@@ -75,7 +76,8 @@
         height: 70px;
     }
     .menu {
-        min-height: 20px;
+        width: 17px;
+        height: 17px;
     }
     .header p {
         font-size: 20px;
@@ -89,7 +91,8 @@
         height: 70px;
     }
     .menu {
-        min-height: 15px;
+        width: 15px;
+        height: 15px;
     }
     .header p {
         font-size: 15px;
