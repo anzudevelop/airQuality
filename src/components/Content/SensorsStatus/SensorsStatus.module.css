@@ -1,0 +1,160 @@
+.wrapper {
+    background-color: #131313;
+    position: absolute;
+    top: 540px;
+    width: 100%;
+    height: 440px;
+}
+
+.sensorsContent {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 440px;
+}
+
+.sensorsContent h2 {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 64px;
+}
+
+.sensorsContent div {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sensorsContent img {
+    margin-left: 20px;
+}
+
+@media (max-width: 1469px) {
+    .wrapper {
+        top: 540px;
+        height: 440px;
+    }
+
+    .sensorsContent {
+        height: 440px;
+    }
+
+    .sensorsContent h2 {
+        font-size: 40px;
+    }
+
+    .sensorsContent div {
+        font-size: 25px;
+    }
+
+    .sensorsContent img {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 1255px) {
+    .wrapper {
+        top: 540px;
+        height: 440px;
+    }
+
+    .sensorsContent {
+        height: 440px;
+    }
+
+    .sensorsContent h2 {
+        font-size: 30px;
+    }
+
+    .sensorsContent div {
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    .sensorsContent img {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 1024px) {
+    .wrapper {
+        top: 440px;
+        height: 440px;
+    }
+
+    .sensorsContent {
+        height: 440px;
+    }
+
+    .sensorsContent h2 {
+        font-size: 25px;
+    }
+
+    .sensorsContent div {
+        font-size: 15px;
+        line-height: 40px;
+    }
+
+    .sensorsContent img {
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        top: 540px;
+        height: 440px;
+    }
+
+    .sensorsContent {
+        height: 440px;
+    }
+
+    .sensorsContent h2 {
+        font-size: 30px;
+    }
+
+    .sensorsContent div {
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .sensorsContent img {
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+    }
+}
+@media (max-width: 460px) {
+    .wrapper {
+        top: 500px;
+        height: 440px;
+    }
+
+    .sensorsContent {
+        height: 440px;
+    }
+
+    .sensorsContent h2 {
+        font-size: 30px;
+    }
+
+    .sensorsContent div {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .sensorsContent img {
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+    }
+}

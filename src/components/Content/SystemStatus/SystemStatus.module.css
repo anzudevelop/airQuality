@@ -1,0 +1,432 @@
+.wrapper {
+    background-color: #131313;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 1711px;
+}
+
+.infoContent {
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    right: 10%;
+    height: 240px;
+}
+
+.systemStatus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 240px;
+}
+
+.systemStatus h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 64px;
+    color: #FFFFFF;
+}
+
+.systemStatus h1 {
+    position: absolute;
+    top: 134px;
+    left: 0;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.power {
+    position: absolute;
+    top: 190px;
+    left: 0;
+    width: 576px;
+    height: 47px;
+    background: #E5E5E5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.powerValue {
+    z-index: 1;
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+
+    color: #131313;
+    opacity: 0.5;
+}
+
+.power .activePower {
+    position: absolute;
+    left: 0;
+    height: 47px;
+    background: #27AE60;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.status {
+    color: white;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.status img {
+    margin-left: 20px;
+}
+
+.device {
+    position: absolute;
+    top: 0;
+    left: 50%
+}
+
+.mqtt {
+    position: absolute;
+    top: 70px;
+    left: 50%
+}
+
+.wifi {
+    position: absolute;
+    top: 140px;
+    left: 50%
+}
+
+
+@media (max-width: 1469px) {
+    .infoContent {
+        height: 240px;
+    }
+
+    .systemStatus {
+        height: 240px;
+    }
+
+    .systemStatus h2 {
+        font-size: 40px;
+    }
+
+    .systemStatus h1 {
+        font-size: 25px;
+    }
+
+    .power {
+        width: 400px;
+        height: 40px;
+    }
+
+    .powerValue {
+        top: 3px;
+        font-size: 25px;
+    }
+
+    .power .activePower {
+        height: 40px;
+    }
+
+    .status {
+        font-size: 25px;
+    }
+
+    .status img {
+        margin-left: 20px;
+    }
+
+    .device {
+        position: absolute;
+        top: 30px;
+        left: 50%
+    }
+
+    .mqtt {
+        position: absolute;
+        top: 100px;
+        left: 50%
+    }
+
+    .wifi {
+        position: absolute;
+        top: 170px;
+        left: 50%
+    }
+}
+@media (max-width: 1255px) {
+    .wrapper {
+        height: 1500px;
+    }
+    .infoContent {
+        height: 240px;
+    }
+
+    .systemStatus {
+        height: 240px;
+    }
+
+    .systemStatus h2 {
+        font-size: 30px;
+    }
+
+    .systemStatus h1 {
+        font-size: 20px;
+    }
+
+    .power {
+        width: 300px;
+        height: 30px;
+    }
+
+    .powerValue {
+        top: -3px;
+        font-size: 20px;
+    }
+
+    .power .activePower {
+        height: 30px;
+    }
+
+    .status {
+        font-size: 20px;
+    }
+
+    .status img {
+        margin-left: 20px;
+    }
+
+    .device {
+        position: absolute;
+        top: 30px;
+        left: 50%
+    }
+
+    .mqtt {
+        position: absolute;
+        top: 100px;
+        left: 50%
+    }
+
+    .wifi {
+        position: absolute;
+        top: 170px;
+        left: 50%
+    }
+}
+@media (max-width: 1024px) {
+    .wrapper {
+        top: 50px;
+        height: 1100px;
+    }
+    .infoContent {
+        height: 200px;
+    }
+
+    .systemStatus {
+        height: 200px;
+    }
+
+    .systemStatus h2 {
+        font-size: 25px;
+    }
+
+    .systemStatus h1 {
+        font-size: 20px;
+    }
+
+    .power {
+        width: 250px;
+        height: 25px;
+    }
+
+    .powerValue {
+        top: -5px;
+        font-size: 15px;
+    }
+
+    .power .activePower {
+        height: 25px;
+    }
+
+    .status {
+        font-size: 15px;
+    }
+
+    .status img {
+        margin-left: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .device {
+        position: absolute;
+        top: 15px;
+        left: 50%
+    }
+
+    .mqtt {
+        position: absolute;
+        top: 85px;
+        left: 50%
+    }
+
+    .wifi {
+        position: absolute;
+        top: 155px;
+        left: 50%
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        top: 50px;
+        height: 1350px;
+    }
+    .infoContent {
+        height: 200px;
+    }
+
+    .systemStatus {
+        height: 200px;
+    }
+
+    .systemStatus h2 {
+        font-size: 35px;
+    }
+
+    .systemStatus h1 {
+        top: 90px;
+        font-size: 28px;
+    }
+
+    .power {
+        left: 0;
+        right: 0;
+        top: 140px;
+        width: unset;
+        height: 35px;
+    }
+
+    .powerValue {
+        top: 0;
+        font-size: 25px;
+    }
+
+    .power .activePower {
+        height: 35px;
+    }
+
+    .status {
+        font-size: 21px;
+    }
+
+    .status img {
+        margin-left: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .device {
+        position: absolute;
+        top: 200px;
+        left: 0;
+    }
+
+    .mqtt {
+        position: absolute;
+        top: 250px;
+        left: 0;
+    }
+
+    .wifi {
+        position: absolute;
+        top: 300px;
+        left: 0;
+    }
+}
+@media (max-width: 460px) {
+    .wrapper {
+        top: 50px;
+        height: 1700px;
+    }
+    .infoContent {
+        top: 50px;
+        height: 200px;
+    }
+
+    .systemStatus {
+        height: 200px;
+    }
+
+    .systemStatus h2 {
+        font-size: 25px;
+        line-height: 40px;
+    }
+
+    .systemStatus h1 {
+        top: 70px;
+        font-size: 20px;
+    }
+
+    .power {
+        left: 0;
+        right: 0;
+        top: 120px;
+        width: unset;
+        height: 35px;
+    }
+
+    .powerValue {
+        top: 0;
+        font-size: 25px;
+    }
+
+    .power .activePower {
+        height: 35px;
+    }
+
+    .status {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .status img {
+        margin-left: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .device {
+        position: absolute;
+        top: 200px;
+        left: 0;
+    }
+
+    .mqtt {
+        position: absolute;
+        top: 250px;
+        left: 0;
+    }
+
+    .wifi {
+        position: absolute;
+        top: 300px;
+        left: 0;
+    }
+}

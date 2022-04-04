@@ -1,6 +1,10 @@
 import s from './Content.module.css'
 import icon from "../../icons/content/icon.svg";
-import InformationContent from "./InformationContent/InformationContent";
+import arrow from "../../icons/content/arrow.svg";
+import squarePicture from "../../icons/content/squarePicture.svg";
+import SystemStatus from "./SystemStatus/SystemStatus";
+import SensorsStatus from "./SensorsStatus/SensorsStatus";
+import {NavLink} from "react-router-dom";
 
 let Content = () => {
     return (
@@ -16,7 +20,18 @@ let Content = () => {
                 <div className={s.scrollDown}>
                     Листай ниже ↓
                 </div>
-                <InformationContent />
+                <SystemStatus />
+                <SensorsStatus />
+                <NavLink to="/data" className={s.navlink}>
+                    <img src={arrow} />
+                    <h3>Перейти к данным о качестве воздуха</h3>
+                </NavLink>
+                <div className={s.decoration}>
+                    <img src={squarePicture}/>
+                    <h3>
+                        Качество воздуха – состав воздуха в помещении, при котором при длительном воздействии на человека обеспечивается оптимальное или допустимое состояние организма человека.
+                    </h3>
+                </div>
             </div>
         </div>
     );

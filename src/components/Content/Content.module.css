@@ -1,7 +1,7 @@
 .content {
     position: relative;
     width: 100%;
-    height: 1150px;
+    height: 1151px;
     background-color: #131313;
 }
 
@@ -9,7 +9,7 @@
 .content p {
     position: absolute;
     margin: auto;
-    top: 390px; left: 20%; bottom: 0; right: 20%;
+    top: 300px; left: 20%; bottom: 0; right: 20%;
     text-align: center;
     color: white;
     font-family: 'Mont';
@@ -65,63 +65,314 @@
     font-size: 30px;
 }
 
-@media (max-width: 1024px) {
-    .content {
-        top: 70px;
+.navlink {
+    position: absolute;
+    top: 1120px;
+    left: 10%;
+    width: 860px;
+    height: 60px;
+    margin: auto 0;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.navlink img {
+    margin: auto 0;
+    width: 30px;
+    height: 30px;
+}
+
+.navlink h3 {
+    margin-left: 21px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 51px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.decoration {
+    position: absolute;
+    top: 1300px;
+    left: 10%;
+    right: 10%;
+    height: 380px;
+}
+
+.decoration img {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: auto;
+    height: 100%;
+}
+
+.decoration h3 {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 0;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 65px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1731px) {
+    .decoration h3 {
+        font-size: 43px;
+        line-height: 55px;
     }
+}
+@media (max-width: 1649px) {
     .content p {
-        top: 7%; left: 15%; right: 15%;
-        font-size: 40px;
+        top: 20%;
+        font-size: 70px;
+    }
+    .decoration h3 {
+        line-height: 55px;
     }
     .info {
-        top: 300px;
+        top: 850px;
+        width: 100%;
+        max-height: 40px;
+    }
+}
+@media (max-width: 1469px) {
+    .content p {
+        top: 20%;
+        font-size: 60px;
+    }
+    .info {
+        top: 750px;
         width: 100%;
         max-height: 40px;
     }
     .info .air {
-        font-size: 17px;
+        font-size: 22px;
     }
     .info .scrollDown {
-        font-size: 17px;
+        font-size: 22px;
+    }
+    .navlink {
+        top: 1050px;
+    }
+
+    .navlink img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .navlink h3 {
+        font-size: 35px;
+    }
+
+    .decoration {
+        top: 1200px;
+        height: 350px;
+    }
+
+    .decoration h3 {
+        font-size: 30px;
+        line-height: 60px;
+    }
+}
+@media (max-width: 1255px) {
+    .content p {
+        top: 20%;
+        font-size: 55px;
+        line-height: 90px;
+    }
+    .info {
+        top: 750px;
+        width: 100%;
+        max-height: 40px;
+    }
+    .info .air {
+        font-size: 22px;
+    }
+    .info .scrollDown {
+        font-size: 22px;
+    }
+    .navlink {
+        top: 1000px;
+    }
+
+    .navlink img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .navlink h3 {
+        font-size: 35px;
+    }
+
+    .decoration {
+        top: 1150px;
+        height: 250px;
+    }
+
+    .decoration h3 {
+        font-size: 25px;
+        line-height: 45px;
+    }
+}
+@media (max-width: 1024px) {
+    .content p {
+        top: 15%;
+        left: 15%;
+        right: 15%;
+        font-size: 50px;
+        line-height: 95px;
+    }
+    .info {
+        top: 750px;
+        width: 100%;
+        max-height: 40px;
+    }
+    .info .air {
+        font-size: 15px;
+    }
+    .info .scrollDown {
+        font-size: 15px;
+    }
+    .navlink {
+        top: 800px;
+        width: 650px;
+    }
+
+    .navlink img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navlink h3 {
+        font-size: 20px;
+    }
+
+    .decoration {
+        top: 900px;
+        height: 150px;
+    }
+
+    .decoration h3 {
+        font-size: 15px;
+        line-height: 30px;
     }
 }
 @media (max-width: 768px) {
-    .content {
-        top: 70px;
-    }
     .content p {
-        top: 3%; left: 10%; right: 10%;
-        font-size: 30px;
+        top: 10%;
+        left: 5%;
+        right: 5%;
+        font-size: 40px;
+        line-height: 60px;
     }
     .info {
-        top: 200px;
+        top: 550px;
         width: 100%;
-        max-height: 30px;
+        max-height: 40px;
     }
     .info .air {
-        font-size: 14px;
+        font-size: 15px;
     }
     .info .scrollDown {
-        font-size: 14px;
+        font-size: 15px;
+    }
+    .navlink {
+        top: 1120px;
+        width: 400px;
+    }
+
+    .navlink img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .navlink h3 {
+        margin-left: 12px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .decoration {
+        top: 1200px;
+        left: 5%;
+        right: 5%;
+        height: 150px;
+    }
+
+    .decoration h3 {
+        left: 45%;
+        font-size: 15px;
+        line-height: 19px;
     }
 }
 @media (max-width: 460px) {
-    .content {
-        top: 70px;
-    }
     .content p {
-        top: 2%; left: 7%; right: 7%;
-        font-size: 20px;
+        top: 7%;
+        left: 5%;
+        right: 5%;
+        font-size: 30px;
+        line-height: 60px;
     }
     .info {
-        top: 150px;
+        top: 450px;
         width: 100%;
-        max-height: 30px;
+        max-height: 40px;
+    }
+    .info .logo {
+        width: 26.6%;
+        left: 6%;
     }
     .info .air {
-        font-size: 10px;
+        font-size: 15px;
     }
     .info .scrollDown {
-        font-size: 10px;
+        font-size: 15px;
+    }
+    .navlink {
+        top: 1120px;
+        width: 300px;
+    }
+
+    .navlink img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .navlink h3 {
+        margin-left: 8px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .decoration {
+        top: 1200px;
+        left: 5%;
+        right: 5%;
+        height: 150px;
+    }
+
+    .decoration img {
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 100%;
+    }
+
+    .decoration h3 {
+        left: 5%;
+        top: 200px;
+        font-size: 20px;
+        line-height: 35px;
     }
 }

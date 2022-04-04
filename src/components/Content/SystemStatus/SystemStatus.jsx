@@ -1,4 +1,4 @@
-import s from './InformationContent.module.css'
+import s from './SystemStatus.module.css'
 import greenEllipse from './../../../icons/content/greenEllipse.svg'
 import redEllipse from './../../../icons/content/redEllipse.svg'
 
@@ -11,7 +11,7 @@ let sysData = {
 let power = 70
 
 
-let InformationContent = () => {
+let SystemStatus = () => {
     return (
         <div className={s.wrapper}>
             <div className={s.infoContent}>
@@ -46,4 +46,4 @@ let InformationContent = () => {
 
 
 
-export default InformationContent;
+export default SystemStatus;
