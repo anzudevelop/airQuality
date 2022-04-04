@@ -10,7 +10,7 @@ function App() {
             <div className={s.App}>
                 {/* <div className={s.borderGrid} />
                 <div className={s.centerGrid} />*/}
-                <Header/>
+                <Header />
                 <Routes>
                     <Route path="/" element={<Content/>}/>
                     {/*
