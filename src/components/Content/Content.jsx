@@ -6,7 +6,7 @@ import SystemStatus from "./SystemStatus/SystemStatus";
 import SensorsStatus from "./SensorsStatus/SensorsStatus";
 import {NavLink} from "react-router-dom";
 
-let Content = () => {
+let Content = (props) => {
     return (
         <div className={s.content}>
             <p>Система мониторинга и анализа качества воздуха в закрытом помещении</p>
@@ -20,8 +20,8 @@ let Content = () => {
                 <div className={s.scrollDown}>
                     Листай ниже ↓
                 </div>
-                <SystemStatus />
-                <SensorsStatus />
+                <SystemStatus sysData={props.data.sysData}/>
+                <SensorsStatus sensorsData={props.data.sensorsData}/>
                 <NavLink to="/data" className={s.navlink}>
                     <img src={arrow} />
                     <h3>Перейти к данным о качестве воздуха</h3>

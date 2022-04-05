@@ -2,16 +2,7 @@ import s from './SystemStatus.module.css'
 import greenEllipse from './../../../icons/content/greenEllipse.svg'
 import redEllipse from './../../../icons/content/redEllipse.svg'
 
-let sysData = {
-    device: false,
-    mqtt: true,
-    wifi: false,
-}
-
-let power = 70
-
-
-let SystemStatus = () => {
+let SystemStatus = (props) => {
     return (
         <div className={s.wrapper}>
             <div className={s.infoContent}>
@@ -20,22 +11,22 @@ let SystemStatus = () => {
                         <h2>Состояние системы</h2>
                         <h1>Уровень заряда батареи</h1>
                         <div className={s.power}>
-                            <div className={s.powerValue}>{power} %</div>
-                            <div className={s.activePower} style={{width: `${power}%`}} />
+                            <div className={s.powerValue}>{props.sysData.power} %</div>
+                            <div className={s.activePower} style={{width: `${props.sysData.power}%`}} />
                         </div>
                     </span>
                     <span className={s.status}>
                         <div className={s.device}>
-                            Устройство: {sysData.device ? `включено` : `выключено`}
-                            <img src={sysData.device ? greenEllipse : redEllipse} />
+                            Устройство: {props.sysData.device ? `включено` : `выключено`}
+                            <img src={props.sysData.device ? greenEllipse : redEllipse} />
                         </div>
                         <div className={s.mqtt}>
-                            MQTT веб-сервер: {sysData.mqtt ? `включен` : `выключен`}
-                            <img src={sysData.mqtt ? greenEllipse : redEllipse} />
+                            MQTT веб-сервер: {props.sysData.mqtt ? `включен` : `выключен`}
+                            <img src={props.sysData.mqtt ? greenEllipse : redEllipse} />
                         </div>
                         <div className={s.wifi}>
-                            Wi-Fi соединение: {sysData.wifi ? `активно` : `не активно`}
-                            <img src={sysData.wifi ? greenEllipse : redEllipse} />
+                            Wi-Fi соединение: {props.sysData.wifi ? `активно` : `не активно`}
+                            <img src={props.sysData.wifi ? greenEllipse : redEllipse} />
                         </div>
                     </span>
                 </div>
