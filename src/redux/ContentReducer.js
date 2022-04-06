@@ -6,7 +6,7 @@ let initialState = {
         device: true,
         mqtt: false,
         wifi: true,
-        power: 75,
+        power: 100,
     },
     sensorsData: {
         co2: true,

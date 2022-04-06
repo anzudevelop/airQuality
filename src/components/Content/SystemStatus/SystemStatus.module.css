@@ -57,7 +57,6 @@
 }
 
 .powerValue {
-    z-index: 1;
     position: absolute;
     top: 6px;
     right: 5px;
@@ -72,7 +71,7 @@
     opacity: 0.5;
 }
 
-.power .activePower {
+.activePower {
     position: absolute;
     left: 0;
     height: 47px;

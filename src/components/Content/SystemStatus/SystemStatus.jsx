@@ -11,8 +11,8 @@ let SystemStatus = (props) => {
                         <h2>Состояние системы</h2>
                         <h1>Уровень заряда батареи</h1>
                         <div className={s.power}>
-                            <div className={s.powerValue}>{props.sysData.power} %</div>
                             <div className={s.activePower} style={{width: `${props.sysData.power}%`}} />
+                            <div className={s.powerValue}>{props.sysData.power} %</div>
                         </div>
                     </span>
                     <span className={s.status}>

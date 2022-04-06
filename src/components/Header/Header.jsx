@@ -2,7 +2,6 @@ import s from './Header.module.css'
 import menuIcon from './../../icons/header/menu.svg'
 import iconNav from './../../icons/header/iconNav.svg'
 import {NavLink} from "react-router-dom";
-import {clickOnMenu} from "../../redux/HeaderReducer";
 
 let Header = (props) => {
     const date = new Date()
