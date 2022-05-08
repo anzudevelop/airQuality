@@ -1,22 +1,14 @@
 import s from './Charts.module.css'
 import chartExample from './exampleOfGraph.png'
+import Chart from "./Chart/Chart";
 
 let Charts = (props) => {
     return (
         <div className={s.wrapper}>
             <div className={s.chartsArea}>
-                <div className={s.chartBody}>
-                    <img src={chartExample} />
-                </div>
-                <div className={s.chartBody}>
-                    <img src={chartExample} />
-                </div>
-                <div className={s.chartBody}>
-                    <img src={chartExample} />
-                </div>
-                <div className={s.chartBody}>
-                    <img src={chartExample} />
-                </div>
+                <Chart />
+                <Chart />
+                <Chart />
             </div>
         </div>
     );

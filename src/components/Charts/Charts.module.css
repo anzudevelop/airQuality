@@ -7,17 +7,7 @@
 
 .chartsArea {
     position: relative;
-    top: 30vh;
+    top: 20vh;
     left: 10vw;
     width: 80%;
-}
-
-.chartBody {
-    position: relative;
-    margin-bottom: 5vh;
-    height: 455px;
-}
-
-.chartBody img{
-    width: 100%;
 }
