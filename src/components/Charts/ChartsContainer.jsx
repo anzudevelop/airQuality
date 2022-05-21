@@ -4,7 +4,7 @@ import {updateChartsData} from "../../redux/ChartsReducer";
 
 let mapStateToProps = (state) => {
     return {
-        data: state.chartsPage,
+        data: state.chartsPage.charts,
     }
 }
 

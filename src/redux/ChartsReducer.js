@@ -2,7 +2,10 @@ const UPDATE_CHARTS_DATA = 'UPDATE_CHARTS_DATA'
 
 let initialState = {
     charts: [
-        123
+        [
+            {id: 1, temperature: 0, date: 'fdggggggggggggggggggggggggggggggg'},
+            {id: 1, temperature: 0, date: 'fdggggggggggggggggggggggggggggggg'}
+        ]
     ],
 }
 
@@ -11,7 +14,7 @@ const chartsReducer = (state = initialState, action) => {
         case UPDATE_CHARTS_DATA: {
             return {
                 ...state,
-                charts: [...state.charts],
+                charts: [action.newData],
             }
         }
         default:
