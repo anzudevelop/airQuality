@@ -23,7 +23,7 @@ let Header = (props) => {
                 <div className={s.menu}>
                     <img src={menuIcon} onClick={clickToMenu} />
                 </div>
-                <p>Свежий воздух</p>
+                <p>Качество воздуха</p>
                 <div className={s.time}>
                     {props.data.time}
                 </div>

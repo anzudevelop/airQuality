@@ -34,7 +34,7 @@
     margin-right: auto;
     font-family: 'Misto';
     font-style: normal;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .header .time {
@@ -111,7 +111,7 @@
         height: 25px;
     }
     .header p {
-        font-size: 50px;
+        font-size: 40px;
     }
     .header .time {
         font-size: 20px;
@@ -151,7 +151,7 @@
         height: 15px;
     }
     .header p {
-        font-size: 20px;
+        font-size: 16px;
     }
     .header .time {
         font-size: 15px;
