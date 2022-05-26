@@ -4,19 +4,14 @@ import iconNav from './../../icons/header/iconNav.svg'
 import {NavLink} from "react-router-dom";
 
 let Header = (props) => {
-    const date = new Date()
-    let hours = date.getHours()
-    if(hours / 10 < 1) hours = `0${hours}`
 
-    let minutes = date.getMinutes()
-    if(minutes / 10 < 1) minutes = `0${minutes}`
+    let time = new Date()
 
-    let time = {
-        hours,
-        minutes,
+    function tick1s() {
+        time = new Date().toLocaleTimeString().slice(0,5)
+        props.updateTime(time)
     }
-
-    //props.updateTime(time)
+    setInterval(tick1s, 1000);
 
     let clickToMenu = () => {
         props.clickOnMenu()
@@ -30,7 +25,7 @@ let Header = (props) => {
                 </div>
                 <p>Свежий воздух</p>
                 <div className={s.time}>
-                    {`${props.data.time.hours}:${props.data.time.minutes}`}
+                    {props.data.time}
                 </div>
             </div>
             <div className={props.data.isMenuOpen ? `${s.navbar} ${s.active}` : `${s.navbar}`}>

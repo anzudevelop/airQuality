@@ -1,35 +1,23 @@
 import s from './Charts.module.css'
 import React from "react";
 import Chart from "./Chart/Chart";
-import {chartsAPI} from "../../api/api";
+import {setCO2Data} from "../../redux/ChartsReducer";
 
 
 class Charts extends React.Component {
 
     componentDidMount() {
-        //this.props.toggleIsFetching(true)
-        chartsAPI.getCharts().then(data => {
-            /*this.props.toggleIsFetching(false)
-            this.props.setUsers(data.items)
-            this.props.setTotalUsersCount(data.totalCount)*/
-            this.props.updateChartsData(data)
-        })
+        this.props.setTemperatureData()
+        this.props.setCO2Data()
     }
-
-    /*onPageChanged = (pageNumber) => {
-        this.props.toggleIsFetching(true)
-        this.props.setCurrentPage(pageNumber)
-        usersAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false)
-            this.props.setUsers(data.items)
-        })
-    }*/
 
     render() {
         return <>
+            {window.scrollTo(0, 0)}
             <div className={s.wrapper}>
                 <div className={s.chartsArea}>
-                    <Chart data={this.props.data}/>
+                    <Chart label='Температура' data={this.props.temperatureData}/>
+                    <Chart label='CO2' data={this.props.co2Data}/>
                 </div>
             </div>
         </>

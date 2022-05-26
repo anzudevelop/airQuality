@@ -6,8 +6,11 @@ const instance = axios.create({
 })
 
 export const chartsAPI = {
-    getCharts() {
-        return instance.get(`server-api/get`).then(response => response.data)
+    getTemperature() {
+        return instance.get(`server-api/getTempData`).then(response => response.data)
+    },
+    getCO2() {
+        return instance.get(`server-api/getCO2Data`).then(response => response.data)
     },
     /*followUnfollow(isFollowed, userId) {
         if (!isFollowed) {

@@ -2,10 +2,7 @@ const UPDATE_TIME = 'UPDATE_TIME'
 const CLICK_ON_MENU = 'CLICK_ON_MENU'
 
 let initialState = {
-    time: {
-        hours: '00',
-        minutes: '00',
-    },
+    time: '',
     isMenuOpen: false,
 }
 
@@ -14,10 +11,7 @@ const headerReducer = (state = initialState, action) => {
         case UPDATE_TIME: {
             return {
                 ...state,
-                time: {
-                    hours: action.newTime.hours,
-                    minutes: action.newTime.minutes,
-                }
+                time: action.newTime
             }
         }
         case CLICK_ON_MENU: {

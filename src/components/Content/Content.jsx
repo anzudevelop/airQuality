@@ -7,8 +7,10 @@ import SensorsStatus from "./SensorsStatus/SensorsStatus";
 import {NavLink} from "react-router-dom";
 
 let Content = (props) => {
+
     return (
         <div className={s.content}>
+            <script>window.scrollTo(0, 0)</script>
             <p>Система мониторинга и анализа качества воздуха в закрытом помещении</p>
             <div className={s.info}>
                 <div className={s.logo}>

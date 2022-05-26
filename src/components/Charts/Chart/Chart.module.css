@@ -1,5 +1,22 @@
 .chartBody {
     position: relative;
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 25vw auto;
     width: 50vw;
+    height: 100px;
+}
+
+@media (max-width: 1024px) {
+    .chartBody {
+        width: 60vw;
+    }
+}
+@media (max-width: 768px) {
+    .chartBody {
+        width: 70vw;
+    }
+}
+@media (max-width: 460px) {
+    .chartBody {
+        width: 80vw;
+    }
 }

@@ -13,25 +13,18 @@ import {
 import { Line } from "react-chartjs-2";
 
 let Chart = (props) => {
-
-    let chartsData = props.data[0]
-    console.log(`Кол-во записей:\t${chartsData.length}`)
-    const temperatures = chartsData.map(el => el.temperature)
+    let chartsData = props.data
+    const dataPoints = chartsData.map(el => el.value)
     const times = chartsData.map(el => el.date.slice(11).slice(0, 5))
-    console.log(temperatures)
-    console.log(times)
-
-    const datapoints = [3, 5, 2, 7, 5, 4];
-    const labelsData = ['10:30', '14:30', '20:30', '00:30', '04:30', '10:30']
 
     const data = {
         labels: times,
         datasets: [{
-            label: 'Unfilled',
-            fill: false,
-            backgroundColor: 'rgb(200,220,250)',
-            borderColor: 'rgb(200,220,250)',
-            data: temperatures,
+            label: props.label,
+            fill: true,
+            backgroundColor: 'rgb(196,206,218)',
+            borderColor: 'rgb(196,206,218)',
+            data: dataPoints,
         }]
     };
 
@@ -43,12 +36,12 @@ let Chart = (props) => {
             plugins: {
                 title: {
                     display: true,
-                    textDecorationColor: 'rgb(200,220,250)',
+                    textDecorationColor: 'rgb(196,206,218)',
                 },
             },
             interaction: {
                 mode: 'index',
-                intersect: false
+                intersect: true
             },
             scales: {
                 x: {
