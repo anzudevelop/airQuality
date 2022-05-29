@@ -13,9 +13,8 @@ import {
 import { Line } from "react-chartjs-2";
 
 let Chart = (props) => {
-    let chartsData = props.data
-    const dataPoints = chartsData.map(el => el.value)
-    const times = chartsData.map(el => el.date.slice(11).slice(0, 5))
+    const dataPoints = props.values
+    const times = props.dates
 
     const data = {
         labels: times,
