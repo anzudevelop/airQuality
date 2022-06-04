@@ -17,16 +17,16 @@ let SystemStatus = (props) => {
                     </span>
                     <span className={s.status}>
                         <div className={s.device}>
-                            Устройство: {props.sysData.device ? `включено` : `выключено`}
-                            <img src={props.sysData.device ? greenEllipse : redEllipse} />
+                            Устройство: {props.status.power < props.time ? `включено` : `выключено`}
+                            <img src={props.status.power < props.time ? greenEllipse : redEllipse} />
                         </div>
                         <div className={s.mqtt}>
-                            MQTT веб-сервер: {props.sysData.mqtt ? `включен` : `выключен`}
-                            <img src={props.sysData.mqtt ? greenEllipse : redEllipse} />
+                            MQTT веб-сервер: {props.status.mqtt < props.time ? `включен` : `выключен`}
+                            <img src={props.status.mqtt < props.time ? greenEllipse : redEllipse} />
                         </div>
                         <div className={s.wifi}>
-                            Wi-Fi соединение: {props.sysData.wifi ? `активно` : `не активно`}
-                            <img src={props.sysData.wifi ? greenEllipse : redEllipse} />
+                            Wi-Fi соединение: {props.status.wifi < props.time ? `активно` : `не активно`}
+                            <img src={props.status.wifi < props.time ? greenEllipse : redEllipse} />
                         </div>
                     </span>
                 </div>

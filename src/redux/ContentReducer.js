@@ -1,5 +1,9 @@
+import {chartsAPI} from "../api/api";
+
 const UPDATE_SYS_DATA = 'UPDATE_SYS_DATA'
 const UPDATE_SENSORS_DATA = 'UPDATE_SENSORS_DATA'
+const UPDATE_SENSORS_STATUS = 'UPDATE_SENSORS_STATUS'
+
 
 let initialState = {
     sysData: {
@@ -16,6 +20,7 @@ let initialState = {
         tempWet: true,
         tempPres: true,
     },
+    sensorsStatus: [],
 }
 
 const contentReducer = (state = initialState, action) => {
@@ -44,6 +49,12 @@ const contentReducer = (state = initialState, action) => {
                 }
             }
         }
+        case UPDATE_SENSORS_STATUS: {
+            return {
+                ...state,
+                sensorsStatus: action.data,
+            }
+        }
         default:
             return state
     }
@@ -58,5 +69,19 @@ export const updateSensorsData = (data) => ({
     type: UPDATE_SENSORS_DATA,
     newData: data,
 })
+
+const updateSensorsStatus = (data) => ({
+    type: UPDATE_SENSORS_STATUS,
+    data
+})
+
+
+export const setSensorsStatus = () => {
+    return (dispatch) => {
+        chartsAPI.getSensorsStatus().then(data => {
+            dispatch(updateSensorsStatus(data))
+        })
+    }
+}
 
 export default contentReducer

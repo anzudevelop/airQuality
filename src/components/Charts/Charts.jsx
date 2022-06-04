@@ -1,16 +1,6 @@
 import s from './Charts.module.css'
 import React from "react";
 import Chart from "./Chart/Chart";
-import {
-    setBmp280,
-    setCO2Data,
-    setDs18b20Data,
-    setMhz19b,
-    setSds011, setSht30,
-    setTemperatureData,
-    setTgs2611
-} from "../../redux/ChartsReducer";
-import {chartsAPI} from "../../api/api";
 
 const updateTime = 3 //сек
 

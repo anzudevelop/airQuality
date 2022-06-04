@@ -30,6 +30,9 @@ export const chartsAPI = {
     getDs18b20() {
         return instance.get(`server-api/ds18b20`).then(response => response.data)
     },
+    getSensorsStatus() {
+        return instance.get(`server-api/sensors-status`).then(response => response.data)
+    },
     /*followUnfollow(isFollowed, userId) {
         if (!isFollowed) {
             return instance.post(`follow/${userId}`)

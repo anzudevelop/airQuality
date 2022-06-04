@@ -7,7 +7,7 @@ import {
     setMhz19b,
     setSds011, setSht30,
     setTemperatureData,
-    setTgs2611
+    setTgs2611,
 } from "../../redux/ChartsReducer";
 
 let mapStateToProps = (state) => {

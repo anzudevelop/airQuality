@@ -5,8 +5,15 @@ import squarePicture from "../../icons/content/squarePicture.svg";
 import SystemStatus from "./SystemStatus/SystemStatus";
 import SensorsStatus from "./SensorsStatus/SensorsStatus";
 import {NavLink} from "react-router-dom";
+import {setSensorsStatus} from "../../redux/ContentReducer";
+import {useEffect, useState} from "react";
 
 let Content = (props) => {
+    const time = 15 //seconds
+
+    useEffect(() => {
+        props.setSensorsStatus()
+    }, []);
 
     return (
         <div className={s.content}>
@@ -22,8 +29,8 @@ let Content = (props) => {
                 <div className={s.scrollDown}>
                     Листай ниже ↓
                 </div>
-                <SystemStatus sysData={props.data.sysData}/>
-                <SensorsStatus sensorsData={props.data.sensorsData}/>
+                <SystemStatus sysData={props.data.sysData} status={props.sensorsStatus} time={time}/>
+                <SensorsStatus sensorsData={props.data.sensorsData} status={props.sensorsStatus} time={time}/>
                 <NavLink to="/data" className={s.navlink}>
                     <img src={arrow} />
                     <h3>Перейти к данным о качестве воздуха</h3>

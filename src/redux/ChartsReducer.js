@@ -112,6 +112,8 @@ const updateDs18b20Data = (data) => ({
 
 
 
+
+
 export const setTemperatureData = () => {
     return (dispatch) => {
         chartsAPI.getTemperature().then(data => {
