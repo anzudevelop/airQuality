@@ -15,7 +15,13 @@ let Charts = (props) => {
 
     const sortFunction = (object, param) => {
         if (object == null) return []
-        if (param == 'date_and_time_of_measurement') return object.map(el => el[param].slice(11).slice(0, 5))
+        if (param == 'date_and_time_of_measurement') {
+            let correction = 4 // поправка на время сервера
+            let hour = Number(object[0][param].slice(11,13)) + correction
+            if (hour > 23) hour = hour - 24
+            if (hour < 10) hour = '0' + hour
+            return object.map(el => hour + el[param].slice(13).slice(0, 3))
+        }
         else return object.map(el => el[param])
     }
 

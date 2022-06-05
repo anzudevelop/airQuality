@@ -9,7 +9,7 @@ import {setSensorsStatus} from "../../redux/ContentReducer";
 import {useEffect, useState} from "react";
 
 let Content = (props) => {
-    const time = 15 //seconds
+    const time = 60 //seconds
 
     useEffect(() => {
         props.setSensorsStatus()
