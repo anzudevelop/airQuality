@@ -8,6 +8,8 @@ const UPDATE_SDS011_DATA = 'UPDATE_SDS011_DATA'
 const UPDATE_BMP280_DATA = 'UPDATE_BMP280_DATA'
 const UPDATE_SHT30_DATA = 'UPDATE_SHT30_DATA'
 const UPDATE_DS18B20_DATA = 'UPDATE_DS18B20_DATA'
+const UPDATE_SENSORS_DATA = 'UPDATE_SENSORS_DATA'
+
 
 let initialState = {
     temperatureChartData: [],
@@ -18,6 +20,15 @@ let initialState = {
     bmp280Data: [],
     sht30Data: [],
     ds18b20Data: [],
+    sensorsData: {
+        bmp280: null,
+        ds18b20: null,
+        mhz19b: null,
+        sds011: null,
+        sht30: null,
+        tgs2611: null,
+    },
+
 }
 
 const chartsReducer = (state = initialState, action) => {
@@ -70,6 +81,12 @@ const chartsReducer = (state = initialState, action) => {
                 ds18b20Data: action.data,
             }
         }
+        case UPDATE_SENSORS_DATA: {
+            return {
+                ...state,
+                sensorsData: action.data,
+            }
+        }
         default:
             return state
     }
@@ -107,6 +124,10 @@ const updateSht30Data = (data) => ({
 })
 const updateDs18b20Data = (data) => ({
     type: UPDATE_DS18B20_DATA,
+    data
+})
+const updateSensorsData = (data) => ({
+    type: UPDATE_SENSORS_DATA,
     data
 })
 
@@ -173,5 +194,13 @@ export const setDs18b20Data = () => {
         })
     }
 }
+export const setSensorsData = () => {
+    return (dispatch) => {
+        chartsAPI.getSensorsData().then(data => {
+            dispatch(updateSensorsData(data))
+        })
+    }
+}
+
 
 export default chartsReducer

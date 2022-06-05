@@ -33,6 +33,9 @@ export const chartsAPI = {
     getSensorsStatus() {
         return instance.get(`server-api/sensors-status`).then(response => response.data)
     },
+    getSensorsData() {
+        return instance.get(`server-api/sensors-data`).then(response => response.data)
+    },
     /*followUnfollow(isFollowed, userId) {
         if (!isFollowed) {
             return instance.post(`follow/${userId}`)

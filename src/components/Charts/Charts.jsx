@@ -1,6 +1,7 @@
 import s from './Charts.module.css'
 import React from "react";
 import Chart from "./Chart/Chart";
+import {setSensorsData} from "../../redux/ChartsReducer";
 
 const updateTime = 3 //сек
 
@@ -16,6 +17,7 @@ class Charts extends React.Component {
         this.props.setBmp280()
         this.props.setSht30()
         this.props.setDs18b20Data()
+        //this.props.setSensorsData()
         this.interval = setInterval(() => {
             this.props.setMhz19b()
             this.props.setTgs2611()
@@ -23,6 +25,7 @@ class Charts extends React.Component {
             this.props.setBmp280()
             this.props.setSht30()
             this.props.setDs18b20Data()
+            //this.props.setSensorsData()
             //this.props.setTemperatureData()
             //this.props.setCO2Data()
             //console.log('temp:\t' + this.props.temperatureData.length + '\nco2:\t' + this.props.co2Data.length)

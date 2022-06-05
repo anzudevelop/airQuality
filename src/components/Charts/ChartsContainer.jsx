@@ -5,7 +5,7 @@ import {
     setCO2Data,
     setDs18b20Data,
     setMhz19b,
-    setSds011, setSht30,
+    setSds011, setSensorsData, setSht30,
     setTemperatureData,
     setTgs2611,
 } from "../../redux/ChartsReducer";
@@ -20,11 +20,12 @@ let mapStateToProps = (state) => {
         bmp280Data: state.chartsPage.bmp280Data,
         sht30Data: state.chartsPage.sht30Data,
         ds18b20Data: state.chartsPage.ds18b20Data,
+        sensorsData: state.chartsPage.sensorsData,
     }
 }
 
 const ChartsContainer = connect(mapStateToProps, {
-    setTemperatureData, setCO2Data, setMhz19b, setTgs2611, setSds011, setBmp280, setSht30, setDs18b20Data
+    setTemperatureData, setCO2Data, setMhz19b, setTgs2611, setSds011, setBmp280, setSht30, setDs18b20Data, setSensorsData
 })(Charts)
 
 export default ChartsContainer
