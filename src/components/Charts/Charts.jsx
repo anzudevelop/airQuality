@@ -1,111 +1,94 @@
 import s from './Charts.module.css'
-import React from "react";
+import React, {useEffect} from "react";
 import Chart from "./Chart/Chart";
 import {setSensorsData} from "../../redux/ChartsReducer";
 
-const updateTime = 3 //сек
+const updateTime = 1 //сек
 
-class Charts extends React.Component {
+let Charts = (props) => {
 
-    componentDidMount() {
-        window.scrollTo(0, 0)
-        //this.props.setTemperatureData()
-        //this.props.setCO2Data()
-        this.props.setMhz19b()
-        this.props.setTgs2611()
-        this.props.setSds011()
-        this.props.setBmp280()
-        this.props.setSht30()
-        this.props.setDs18b20Data()
-        //this.props.setSensorsData()
-        this.interval = setInterval(() => {
-            this.props.setMhz19b()
-            this.props.setTgs2611()
-            this.props.setSds011()
-            this.props.setBmp280()
-            this.props.setSht30()
-            this.props.setDs18b20Data()
-            //this.props.setSensorsData()
-            //this.props.setTemperatureData()
-            //this.props.setCO2Data()
-            //console.log('temp:\t' + this.props.temperatureData.length + '\nco2:\t' + this.props.co2Data.length)
-        }, updateTime * 1000)
+    useEffect(() => {
+        setTimeout(() => {
+            props.setSensorsData()
+        }, updateTime * 1000);
+    });
+
+    const sortFunction = (object, param) => {
+        if (object == null) return []
+        if (param == 'date_and_time_of_measurement') return object.map(el => el[param].slice(11).slice(0, 5))
+        else return object.map(el => el[param])
     }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
 
-    render() {
-        return <>
-            <div className={s.wrapper}>
-                <div className={s.chartsArea}>
-                    {/*<Chart label={'Температура'} values={this.props.temperatureData.map(el => el.value)} dates={this.props.temperatureData.map(el => el.date.slice(11).slice(0, 5))}/>
-                    <Chart label={'CO2'} values={this.props.co2Data.map(el => el.value)} dates={this.props.co2Data.map(el => el.date.slice(11).slice(0, 5))}/>*/}
-                    <Chart
-                        label={'Концентрация CO2, ppm'}
-                        values={this.props.mhz19bData.map(el => el.co2_concentration)}
-                        dates={this.props.mhz19bData.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Концентрация CH4, ppm'}
-                        values={this.props.tgs2611Data.map(el => el.ch4_concentration)}
-                        dates={this.props.tgs2611Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Количество взвешенных частиц pm2,5, мг/м^3'}
-                        values={this.props.sds011Data.map(el => el.pm_2_5_concentration)}
-                        dates={this.props.sds011Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Количество взвешенных частиц pm10, мг/м^3'}
-                        values={this.props.sds011Data.map(el => el.pm_10_concentration)}
-                        dates={this.props.sds011Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Атмосферное давление, мм. рт. ст.'}
-                        values={this.props.bmp280Data.map(el => el.pressure)}
-                        dates={this.props.bmp280Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Температура, °C'}
-                        values={this.props.bmp280Data.map(el => el.temperature)}
-                        dates={this.props.bmp280Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Высота над уровнем моря, м'}
-                        values={this.props.bmp280Data.map(el => el.attitude)}
-                        dates={this.props.bmp280Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Относительная влажность, %'}
-                        values={this.props.sht30Data.map(el => el.humidity)}
-                        dates={this.props.sht30Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Температура, °C'}
-                        values={this.props.sht30Data.map(el => el.temperature)}
-                        dates={this.props.sht30Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Температура с первого датчика, °C'}
-                        values={this.props.ds18b20Data.map(el => el.temperature_1)}
-                        dates={this.props.ds18b20Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Температура со второго датчика, °C'}
-                        values={this.props.ds18b20Data.map(el => el.temperature_2)}
-                        dates={this.props.ds18b20Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                    <Chart
-                        label={'Температура с третьего датчика, °C'}
-                        values={this.props.ds18b20Data.map(el => el.temperature_3)}
-                        dates={this.props.ds18b20Data.map(el => el.date_and_time_of_measurement.slice(11).slice(0, 5))}
-                    />
-                </div>
+    return (
+        <div className={s.wrapper}>
+            <script>window.scrollTo(0, 0)</script>
+            <div className={s.chartsArea}>
+
+                <Chart
+                    label={'Концентрация CO2, ppm'}
+                    values={sortFunction(props.sensorsData.mhz19b, 'co2_concentration')}
+                    dates={sortFunction(props.sensorsData.mhz19b, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Концентрация CH4, ppm'}
+                    values={sortFunction(props.sensorsData.tgs2611, 'ch4_concentration')}
+                    dates={sortFunction(props.sensorsData.tgs2611, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Количество взвешенных частиц pm2,5, мг/м^3'}
+                    values={sortFunction(props.sensorsData.sds011, 'pm_2_5_concentration')}
+                    dates={sortFunction(props.sensorsData.sds011, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Количество взвешенных частиц pm10, мг/м^3'}
+                    values={sortFunction(props.sensorsData.sds011, 'pm_10_concentration')}
+                    dates={sortFunction(props.sensorsData.sds011, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Атмосферное давление, мм. рт. ст.'}
+                    values={sortFunction(props.sensorsData.bmp280, 'pressure')}
+                    dates={sortFunction(props.sensorsData.bmp280, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Температура, °C'}
+                    values={sortFunction(props.sensorsData.bmp280, 'temperature')}
+                    dates={sortFunction(props.sensorsData.bmp280, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Высота над уровнем моря, м'}
+                    values={sortFunction(props.sensorsData.bmp280, 'attitude')}
+                    dates={sortFunction(props.sensorsData.bmp280, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Относительная влажность, %'}
+                    values={sortFunction(props.sensorsData.sht30, 'humidity')}
+                    dates={sortFunction(props.sensorsData.sht30, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Температура, °C'}
+                    values={sortFunction(props.sensorsData.sht30, 'temperature')}
+                    dates={sortFunction(props.sensorsData.sht30, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Температура с первого датчика, °C'}
+                    values={sortFunction(props.sensorsData.ds18b20, 'temperature_1')}
+                    dates={sortFunction(props.sensorsData.ds18b20, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Температура со второго датчика, °C'}
+                    values={sortFunction(props.sensorsData.ds18b20, 'temperature_2')}
+                    dates={sortFunction(props.sensorsData.ds18b20, 'date_and_time_of_measurement')}
+                />
+                <Chart
+                    label={'Температура с третьего датчика, °C'}
+                    values={sortFunction(props.sensorsData.ds18b20, 'temperature_3')}
+                    dates={sortFunction(props.sensorsData.ds18b20, 'date_and_time_of_measurement')}
+                />
             </div>
-        </>
-    }
+        </div>
+
+    )
 }
 
 
