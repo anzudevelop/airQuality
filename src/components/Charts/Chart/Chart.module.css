@@ -1,8 +1,8 @@
 .chartBody {
     position: relative;
-    margin: 0 auto 25vw auto;
+    margin: 0 auto 5vh auto;
     width: 50vw;
-    height: 100px;
+    height: 50vh;
 }
 
 @media (max-width: 1024px) {
@@ -17,6 +17,8 @@
 }
 @media (max-width: 460px) {
     .chartBody {
-        width: 80vw;
+        margin: 10vw 0 10vw 0;
+        width: 90vw;
+        height: 380px;
     }
 }
